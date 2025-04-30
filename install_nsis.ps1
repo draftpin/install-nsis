@@ -6,6 +6,7 @@ $addPath = 'C:\Program Files (x86)\NSIS'
 if (-not ($env:PATH.Split(';') -contains $addPath)) { 
     Write-Host "Adding to PATH"
     $env:PATH += ";$addPath" 
+    setx PATH $env:PATH
 }
 
 if ($env:PATH.Split(';') -contains $addPath) {
